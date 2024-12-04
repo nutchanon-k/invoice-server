@@ -11,9 +11,9 @@ const { createInvoiceValidator, updateInvoiceValidator } = require("../middlewar
 const router = express.Router();
 
 router.post("/invoices", createInvoiceValidator, createInvoice);
-router.get("/invoices", updateInvoiceValidator, getInvoices);
+router.get("/invoices",  getInvoices);
 router.get("/invoices/:id", getInvoiceById);
-router.put("/invoices/:id", updateInvoice);
+router.put("/invoices/:id",updateInvoiceValidator, updateInvoice);
 router.delete("/invoices/:id", deleteInvoice);
 
 module.exports = router;
